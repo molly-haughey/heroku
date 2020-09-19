@@ -46,10 +46,46 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
+
+
 //localhost:3000
 app.get('/' , (req, res) => {
   res.send('Hello World!');
 });
+
+/* ===========
+GET ROUTE
+============= */
+//INDEX
+
+
+/* ===========
+POST ROUTE
+============= */
+//CREATE
+
+/* ===========
+DELETE ROUTE
+============= */
+//DELETE
+
+
+/* ===========
+GET ROUTE
+============= */
+//EDIT
+
+
+/* ===========
+PUT ROUTE
+============= */
+//UPDATE
+
+/* ===========
+GET ROUTE
+============= */
+//SHOW
+
 
 //___________________
 //Listener
