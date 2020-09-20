@@ -60,6 +60,11 @@ GET ROUTE
 
 
 /* ===========
+SEED ROUTE
+============= */
+//SEED
+
+/* ===========
 POST ROUTE
 ============= */
 //CREATE
