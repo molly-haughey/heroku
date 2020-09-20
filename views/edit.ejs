@@ -9,19 +9,19 @@
     <div>
       <h1>Improve this succulent</h1>
         <div>
-          <form class="edit" action="/succulents/<%=succulent.id%>?_method=PUT" method="POST">
+          <form action="class" action="/succulents/<%=succulent.id%>?_method=PUT" method="POST">
             <label for="name">Name: </label>
             <input type="text" name="name" value="<%=succulent.name%>" id="name">
             <label for="img">Image: </label>
-            <input type="text" name="img" value="<%=succulent.img%>" id="img">
+            <input type="text" name="img" value=" " id="img">
             <label for="price">Price: </label>
             <input type="number" name="price" value="<%=succulent.price || 0 %>" min="0" step=".01">
             <label for="qty">Quantity: </label>
-            <input type="number" name="qty" value="<%=succulent.qty || 0 %>" min="0" id="qty"> <br>
+            <input type="number" name="qty" value="<%=succulent.qty || 0 %>" min="0" id="qty">
             <input type="submit" name="submit" value="submit" class="edit-button">
           </form>
-            <h5>Current image:</h5>
-            <img src="<%=succulent.img %>" alt="A photo of <%= succulent.name %>" />
+            <h4>Current image:</h4>
+            <img src="<%=succulent.img%>" alt="A photo of <%= succulent.name %>" />
         </div>
     </div>
   </body>

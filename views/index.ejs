@@ -7,10 +7,14 @@
 </head>
 <body>
     <h1>Sweet Succulents</h1>
-    <% for(succulent of succulents) { %>
-            <div>
-        <a href="/succulents/<%=succulents.id%>"><%=succulents.img%></a>
-            </div>
+    
+    <div>
+    <%for (succulent of succulents) {%>
+        <div>
+            <a href="/succulents/<%=succulent.id%>"><h3><%=succulent.name%></h3></a>
+            <img src="<%=succulent.img%>"/>
+        </div>
         <% } %>
+    </div>
 </body>
 </html>

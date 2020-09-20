@@ -1,5 +1,5 @@
 const express = require('express')
-const succulents = express.Router()
+const router = express.Router()
 
 const Succulents = require('../models/products')
 
@@ -7,11 +7,11 @@ const Succulents = require('../models/products')
 GET ROUTE
 ============= */
 //INDEX
-succulents.get('/succulents', (req, res) => {
+router.get('/', (req, res) => {
     Succulents.find({}, (err, allSucculents)=> {
       res.render('index.ejs',
       {
-        Succulents:allSucculents,
+        succulents:allSucculents,
         
       }
       )
@@ -22,7 +22,7 @@ succulents.get('/succulents', (req, res) => {
   GET ROUTE
   ============= */
   //NEW
-  succulents.get('/new', (req, res) => {
+  router.get('/new', (req, res) => {
     res.render('new.ejs')
   })
   
@@ -31,7 +31,7 @@ succulents.get('/succulents', (req, res) => {
   GET ROUTE
   ============= */
   //EDIT
-  succulents.get('/:id/edit', (req, res) => {
+  router.get('/:id/edit', (req, res) => {
     Succulents.findById(req.params.id, (err, editedSucculent) => {
       res.render('edit.ejs', {
         succulent: editedSucculent
@@ -43,7 +43,7 @@ succulents.get('/succulents', (req, res) => {
   GET ROUTE
   ============= */
   //SHOW
-  succulents.get('succulents/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     Succulents.findById(req.params.id, (err, foundSucculent) => {
       res.render('show.ejs', {
         succulent: foundSucculent
@@ -56,7 +56,7 @@ succulents.get('/succulents', (req, res) => {
   PUT ROUTE
   ============= */
   //UPDATE
-  succulents.put('/:id', (req, res) => {
+  router.put('/:id', (req, res) => {
     Succulents.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -72,7 +72,7 @@ succulents.get('/succulents', (req, res) => {
   ============= */
   //CREATE
   
-  succulents.post('/', (req, res)=>{
+  router.post('/', (req, res)=>{
     Succulents.create(req.body, (err, createdSucculents) => {
     res.redirect('/succulents');
     });
@@ -82,7 +82,7 @@ succulents.get('/succulents', (req, res) => {
   DELETE ROUTE
   ============= */
   //DELETE
-  succulents.delete('/:id', (req, res) => {
+  router.delete('/:id', (req, res) => {
     Succulents.findOneAndDelete({ _id: req.params.id }, (err, deletedSucculent) => {
       res.redirect('/succulents')
     })
@@ -92,7 +92,7 @@ succulents.get('/succulents', (req, res) => {
   BUY ROUTE
   ============= */
   //BUY
-  succulents.put('/buy/:id', (req, res) => {
+  router.put('/buy/:id', (req, res) => {
     Succulents.findByIdAndUpdate(
       req.params.id,
       { $inc: { qty: -1 } },
@@ -107,90 +107,90 @@ succulents.get('/succulents', (req, res) => {
   SEED ROUTE
   ============= */
   //SEED
-  succulents.get('/seed/newsucculents', (req, res)=>{
+  router.get('/seed/newsucculents', (req, res)=>{
     const newSucculents =
       [
         {
           name: 'Blue Peruvian Cactus',
-          img: "models/cactus.jpg",
+          img: "https://i.ibb.co/Qnj53GZ/cactus.jpg",
           price: 230,
           qty: 13
         },
         {
           name: 'Echeveria "Purple Pearl"',
-          img: "models/succulent-echevaria.jpg",
+          img: "https://i.ibb.co/hK2mDJn/succulent-echevaria.jpg",
           price: 15,
           qty: 21
         },
         {
           name: 'String of Bananas',
-          img: "models/banana-of-strings.jpg",
+          img: "https://i.ibb.co/SyDqZFR/banana-of-strings.jpg",
           price: 60,
           qty: 8
         },
         {
           name: 'Geometric Garden',
-          img: "models/garden-of-succulents-1.jpg",
+          img: "https://i.ibb.co/KbXjd9p/garden-of-succulents-1.jpg",
           price: 95,
           qty: 23
         },
         {
           name: 'Spider',
-          img: "models/4-2.jpg",
+          img: "https://i.ibb.co/r2LRvxj/4-2.jpg",
           price: 14,
           qty: 19
         },
         {
           name: 'Red-tipped Blossoming Succulent',
-          img: "models/6.jpg",
+          img: "https://i.ibb.co/ZBSsDXW/6.jpg",
           price: 14,
           qty: 18
         },
         {
           name: 'Dark Geometric Blossom',
-          img: "models/2-6.jpg",
+          img: "https://i.ibb.co/n00vykG/2-6.jpg",
           price: 14,
           qty: 26
         },
         {
           name: 'Echeveria Setosa',
-          img: "models/ECHEVERIA-SETOSA.png",
+          img: "https://i.ibb.co/82vxVb5/ECHEVERIA-SETOSA.png",
           price: 14,
           qty: 25
         },
         {
           name: 'Crassula Capitella',
-          img: "models/sucuclent.jpg",
+          img: "https://i.ibb.co/Rv7RtxS/sucuclent.jpg",
           price: 18,
           qty: 22
         },
         {
           name: 'Sansevieria Cylindra',
-          img: "models/snake.jpg",
+          img: "https://i.ibb.co/qLQTNqp/snake.jpg",
           price: 16,
           qty: 20
         },
         {
           name: 'Sand Castle Cactus in a Pot',
-          img: "models/castle-cactus.jpg",
+          img: "https://i.ibb.co/Ny4ybLY/castle-cactus.jpg",
           price: 58,
           qty: 12
         }, 
         {
           name: 'Barrel Cactus',
-          img: "models/barrol-cactus.jpg",
+          img: "https://i.ibb.co/bNjZMW3/barrol-cactus.jpg",
           price: 180,
           qty: 14
         },
         {
           name: 'Green Peruvian Cactus',
-          img: "models/cactus-2.jpg",
+          img: "https://i.ibb.co/8cL5f3z/cactus-2.jpg",
           price: 230,
           qty: 7
         },
         {
           name: 'Small Peruvian Cactus',
-          img: "models/Cactus_mini.jpg",
+          img: "https://i.ibb.co/QCdyJYn/Cactus-mini.jpg",
           price: 55,
           qty: 32
         }   
@@ -204,4 +204,4 @@ succulents.get('/succulents', (req, res) => {
     })
   });
   
-  module.exports = succulents
+  module.exports = router
