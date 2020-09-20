@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sweet Succulents</title>
 </head>
 <body>
     <h1>Sweet Succulents</h1>
-    <div>
-        
-    </div>
+    <% for(succulent of succulents) { %>
+            <div>
+        <a href="/succulents/<%=succulents.id%>"><%=succulents.img%></a>
+            </div>
+        <% } %>
 </body>
 </html>

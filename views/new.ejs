@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+  <body>
+    <nav>
+    </nav>
+    <div>
+      <h2>Add a succulent</h2>
+        <div>
+          <form action="/succulents" method="POST">
+            <label for="name">Name: </label>
+            <input type="text" name="name" value="" required id="name">
+            <label for="img">Image: </label>
+            <input type="text" name="img" value="" id="img">
+            <label for="price">Price: </label>
+            <input type="number" name="price" min="0" step=".01" value="0" id="price">
+            <label for="qty">Quantity: </label>
+            <input type="number" name="qty" min="0" value="0" id="qty"><br>
+            <input type="submit" name="submit" value="submit" class="edit-button">
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

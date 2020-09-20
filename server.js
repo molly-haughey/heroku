@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+
 //___________________
 //Port
 //___________________
@@ -29,6 +30,11 @@ db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //___________________
+//Controllers
+//___________________
+const succulentsController = require('./controllers/succulents')
+
+//___________________
 //Middleware
 //___________________
 
@@ -42,55 +48,17 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.use('/succulents', succulentsController)
 
 //___________________
 // Routes
 //___________________
 
 
-//localhost:3000
+//localhost:3003
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.redirect('/succulents');
 });
-
-/* ===========
-GET ROUTE
-============= */
-//INDEX
-
-
-/* ===========
-SEED ROUTE
-============= */
-//SEED
-
-/* ===========
-POST ROUTE
-============= */
-//CREATE
-
-/* ===========
-DELETE ROUTE
-============= */
-//DELETE
-
-
-/* ===========
-GET ROUTE
-============= */
-//EDIT
-
-
-/* ===========
-PUT ROUTE
-============= */
-//UPDATE
-
-/* ===========
-GET ROUTE
-============= */
-//SHOW
-
 
 //___________________
 //Listener
