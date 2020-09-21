@@ -46,7 +46,7 @@ router.get('/', (req, res) => {
   router.get('/:id', (req, res) => {
     Succulents.findById(req.params.id, (err, foundSucculent) => {
       res.render('show.ejs', {
-        succulent: foundSucculent
+        succulent:foundSucculent
       })
     })
   })
