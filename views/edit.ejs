@@ -7,20 +7,26 @@
   <body>
     <div>
       <h1>Improve this succulent</h1>
-        <div>
+      <div class="container-0"> 
+        <div class="form">
           <form action="class" action="/succulents/<%=succulent.id%>?_method=PUT" method="POST">
             <label for="name">Name: </label>
-            <input type="text" name="name" value="<%=succulent.name%>" id="name">
+            <input type="text" name="name" value="<%=succulent.name%>" id="name"><br>
             <label for="img">Image: </label>
-            <input type="text" name="img" value=" " id="img">
+            <input type="text" name="img" value=" " id="img"><br>
             <label for="price">Price: </label>
-            <input type="number" name="price" value="<%=succulent.price || 0 %>" min="0" step=".01">
+            <input type="number" name="price" value="<%=succulent.price || 0 %>" min="0" step=".01"><br>
             <label for="qty">Quantity: </label>
-            <input type="number" name="qty" value="<%=succulent.qty || 0 %>" min="0" id="qty">
-            <input type="submit" name="submit" value="submit" class="edit-button">
+            <input type="number" name="qty" value="<%=succulent.qty || 0 %>" min="0" id="qty"><br>
+            <input type="submit" name="submit" value="Submit" class="edit-button">
           </form>
+         </div>
+        </div>
+        <div class="container-0">
+          <div class="container-2">
             <h4>Current image:</h4>
             <img src="<%=succulent.img%>" alt="A photo of <%= succulent.name %>" />
+          </div>
         </div>
     </div>
   </body>

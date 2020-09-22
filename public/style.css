@@ -89,3 +89,12 @@ h2 {
 p {
     font-size: 19px;
 }
+
+.form {
+    margin: 1em auto;
+    background-color: #ef6f6c;
+    box-shadow: 5px 10px #7fb685;
+    border-radius: 25px;
+    border: 1px solid #426a5a;
+    padding: 20px;
+}

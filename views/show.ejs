@@ -10,8 +10,8 @@
         <img src="<%=succulent.img%>">
       </div>
     </div>
-    
-    <div class="info">
+    <div class="container-0">
+    <div class="form">
     <p>Price: $<%=succulent.price%></p>
     <% if(succulent.qty <= 0) {%>
         <h4>SOLD OUT</h4>
@@ -25,6 +25,7 @@
       <form action="/succulents/<%=succulent.id%>?_method=DELETE" method="POST">
       <input type="submit" value="DELETE"/>
       </form>
+    </div>
     </div>
     </div>
   

@@ -6,18 +6,22 @@
 </head>
   <body>
     <div>
-      <h2>Add a Succulent</h2>
+      <h1>Add a Succulent</h1>
+      <div class="container-0">
+        <div class="form">
           <form action="/succulents" method="POST">
             <label for="name">Name: </label>
-            <input type="text" name="name" value="" required id="name">
+            <input type="text" name="name" value="" required id="name"><br>
             <label for="img">Image: </label>
-            <input type="img" name="img" value=" " id="img">
+            <input type="img" name="img" value=" " id="img"><br>
             <label for="price">Price: </label>
-            <input type="number" name="price" min="0" step=".01" value="0" id="price">
+            <input type="number" name="price" min="0" step=".01" value="0" id="price"><br>
             <label for="qty">Quantity: </label>
             <input type="number" name="qty" min="0" value="0" id="qty"><br>
             <input type="submit" name="submit" value="Submit">
           </form>
+          </div>
+        </div>
     </div>
   </body>
 </html>
