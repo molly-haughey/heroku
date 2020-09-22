@@ -5,7 +5,13 @@
     </head>
 <body>
     <h1><%=succulent.name%></h1>
-    <img src="<%=succulent.img%>">
+    <div class="container-0">
+      <div class="container-2">
+        <img src="<%=succulent.img%>">
+      </div>
+    </div>
+    
+    <div class="info">
     <p>Price: $<%=succulent.price%></p>
     <% if(succulent.qty <= 0) {%>
         <h4>SOLD OUT</h4>
@@ -14,11 +20,13 @@
       <%}%>
 
     
-      <a href="/succulents/<%=succulent.id%>/edit">Edit</a>
+      <a href="/succulents/<%=succulent.id%>/edit" class="main-link">Edit</a>
     <div>
       <form action="/succulents/<%=succulent.id%>?_method=DELETE" method="POST">
       <input type="submit" value="DELETE"/>
       </form>
     </div>
+    </div>
+  
 </body>
 </html>

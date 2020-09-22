@@ -2,7 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    }
+    padding: 50px 0px 50px 0px;
+    
+}
+
 .container-1 {
     border-radius: 25px;
     text-align: center;
@@ -57,4 +60,32 @@ nav {
 
 h2 {
     color: #ef6f6c;
+}
+
+.container-2 {
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #426a5a;
+    padding: 20px;
+    margin: 0.5em auto;
+    background-color: white;
+    box-shadow: 5px 10px #7fb685;
+    max-width: 700px;
+}
+
+.container-0 {
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    text-align: center;
+    margin: 1em;
+    background-color: #ef6f6c;
+    padding: 10px;
+
+}
+
+p {
+    font-size: 19px;
 }
