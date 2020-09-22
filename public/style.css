@@ -19,9 +19,15 @@ h1 {
     text-align: center;
     padding: 1em;
     background-color: #ddae7e;
-    color: #ef6f6c;
+    color: #f0e6d7;
     margin: 0;
-    
+    background-image: url('https://i.imgur.com/YseKVvJ.jpg');
+    background-blend-mode: darken;   
+}
+
+h1:hover {
+    background-color: #f2c57c;
+    color: #f0e6d7;
 }
 
 a {
@@ -38,8 +44,11 @@ a:hover {
 }
 
 body {
+    background-image: url("https://i.imgur.com/Ni0PTX5.png");
     background-color: #f2c57c;
     font-family: 'Raleway', sans-serif;
+    background-position: 100%;
+    background-blend-mode: lighten;
 }
 
 nav {
@@ -78,23 +87,46 @@ h2 {
     justify-content: center;
 }
 
-.info {
-    text-align: center;
-    margin: 1em;
-    background-color: #ef6f6c;
-    padding: 10px;
-
-}
-
 p {
     font-size: 19px;
 }
 
 .form {
-    margin: 1em auto;
+    margin: 50px 0px 0px 0px;
     background-color: #ef6f6c;
     box-shadow: 5px 10px #7fb685;
     border-radius: 25px;
     border: 1px solid #426a5a;
     padding: 20px;
+}
+
+.container-3 {
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #426a5a;
+    padding: 20px;
+    margin: 3.5em auto;
+    background-color: white;
+    box-shadow: 5px 10px #7fb685;
+    max-width: 700px;
+}
+
+.form1 {
+    margin: 2em;
+    background-color: #ef6f6c;
+    box-shadow: 5px 10px #7fb685;
+    border-radius: 25px;
+    border: 1px solid #426a5a;
+    padding: 20px;
+}
+
+.container-4 {
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #426a5a;
+    padding: 20px;
+    margin: 50px 0px 20px 0px;
+    background-color: white;
+    box-shadow: 5px 10px #7fb685;
+    max-width: 700px;
 }

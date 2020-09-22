@@ -4,10 +4,11 @@
     <%- include('./partials/links.ejs') %>
 </head>
 <body>
-    <h1>Sweet Succulents</h1>
+    <h1><strong>Sweet Succulents</strong></h1>
     <nav>
         <a class="main-link" href="/succulents/new">Create a <b>new</b> succulent!</a>
     </nav>
+    
     <div class="container">
         <%for (succulent of succulents) {%>
             <div class="container-1">
@@ -15,7 +16,8 @@
             <img src="<%=succulent.img%>" width="250"/></a>
             </div>
         <% } %>
-    </div>
     
+    </div>
+    </div>
 </body>
 </html>

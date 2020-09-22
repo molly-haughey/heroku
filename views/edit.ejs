@@ -7,6 +7,9 @@
   <body>
     <div>
       <h1>Improve this succulent</h1>
+      <nav>
+        <a class="main-link" href="/">Home</a>
+      </nav>
       <div class="container-0"> 
         <div class="form">
           <form action="class" action="/succulents/<%=succulent.id%>?_method=PUT" method="POST">
@@ -23,7 +26,7 @@
          </div>
         </div>
         <div class="container-0">
-          <div class="container-2">
+          <div class="container-3">
             <h4>Current image:</h4>
             <img src="<%=succulent.img%>" alt="A photo of <%= succulent.name %>" />
           </div>

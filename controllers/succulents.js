@@ -97,7 +97,7 @@ router.get('/', (req, res) => {
       req.params.id,
       { $inc: { qty: -1 } },
       (err, updatedSucculents) => {
-        res.redirect(`/succulents/${req.params.id}`)
+        res.render('cart.ejs')
       }
     )
   })
