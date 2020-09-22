@@ -4,37 +4,37 @@
     <%- include('./partials/links.ejs') %>
 </head>
 <body>
-    <%if (succulent.readyState == 'loading') {
-        succulent.addEventListener('DOMContentLoaded', ready)
+    <%if (document.readyState == 'loading') {
+        document.addEventListener('DOMContentLoaded', ready)
     } else {
         ready()
     }
     
     function ready() {
-        var removeCartItemButtons = succulent.getElementByClass('btn-danger')
+        var removeCartItemButtons = document.getElementByClass('btn-danger')
         for (var i = 0; i < removeCartItemButtons.length; i++) {
             var button = removeCartItemButtons[i]
             button.addEventListener('click', removeCartItem)
         }
     
-        var quantityInputs = succulent.getElementByClass('cart-quantity-input')
+        var quantityInputs = document.getElementByClass('cart-quantity-input')
         for (var i = 0; i < quantityInputs.length; i++) {
             var input = quantityInputs[i]
             input.addEventListener('change', quantityChanged)
         }
     
-        var addToCartButtons = succulent.getElementByClass('shop-item-button')
+        var addToCartButtons = document.getElementByClass('shop-item-button')
         for (var i = 0; i < addToCartButtons.length; i++) {
             var button = addToCartButtons[i]
             button.addEventListener('click', addToCartClicked)
         }
     
-        succulent.getElementByClass('btn-purchase')[0].addEventListener('click', purchaseClicked)
+        document.getElementByClass('btn-purchase')[0].addEventListener('click', purchaseClicked)
     }
     
     function purchaseClicked() {
         alert('Thank you for your purchase')
-        var cartItems = succulent.getElementByClass('cart-items')[0]
+        var cartItems = document.getElementByClass('cart-items')[0]
         while (cartItems.hasChildNodes()) {
             cartItems.removeChild(cartItems.firstChild)
         }
@@ -66,9 +66,9 @@
     }
     
     function addItemToCart(title, price, imageSrc) {
-        var cartRow = succulent.createElement('div')
+        var cartRow = document.createElement('div')
         cartRow.classList.add('cart-row')
-        var cartItems = succulent.getElementByClass('cart-items')[0]
+        var cartItems = document.getElementByClass('cart-items')[0]
         var cartItemNames = cartItems.getElementByClass('cart-item-title')
         for (var i = 0; i < cartItemNames.length; i++) {
             if (cartItemNames[i].innerText == title) {
@@ -93,7 +93,7 @@
     }
     
     function updateCartTotal() {
-        var cartItemContainer = succulent.getElementByClass('cart-items')[0]
+        var cartItemContainer = document.getElementByClass('cart-items')[0]
         var cartRows = cartItemContainer.getElementByClass('cart-row')
         var total = 0
         for (var i = 0; i < cartRows.length; i++) {
@@ -105,7 +105,7 @@
             total = total + (price * quantity)
         }
         total = Math.round(total * 100) / 100
-        succulent.getElementByClass('cart-total-price')[0].innerText = '$' + total
+        document.getElementByClass('cart-total-price')[0].innerText = '$' + total
     }%>
     <h1>My Cart</h1>
     <section class="container content-section">
