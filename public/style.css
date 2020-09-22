@@ -108,7 +108,7 @@ p {
     margin: 3.5em auto;
     background-color: white;
     box-shadow: 5px 10px #7fb685;
-    max-width: 50%;
+    max-width: 60%;
 }
 
 .form1 {
@@ -128,5 +128,5 @@ p {
         margin: 50px 0px 20px 0px;
         background-color: white;
         box-shadow: 5px 10px #7fb685;
-        max-width: 50%;
+        max-width: 60%;
     }
