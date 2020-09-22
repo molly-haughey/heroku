@@ -108,7 +108,7 @@ p {
     margin: 3.5em auto;
     background-color: white;
     box-shadow: 5px 10px #7fb685;
-    max-width: 700px;
+    max-width: 50%;
 }
 
 .form1 {
@@ -121,12 +121,12 @@ p {
 }
 
 .container-4 {
-    border-radius: 25px;
-    text-align: center;
-    border: 1px solid #426a5a;
-    padding: 20px;
-    margin: 50px 0px 20px 0px;
-    background-color: white;
-    box-shadow: 5px 10px #7fb685;
-    max-width: 700px;
-}
+        border-radius: 25px;
+        text-align: center;
+        border: 1px solid #426a5a;
+        padding: 20px;
+        margin: 50px 0px 20px 0px;
+        background-color: white;
+        box-shadow: 5px 10px #7fb685;
+        max-width: 50%;
+    }
