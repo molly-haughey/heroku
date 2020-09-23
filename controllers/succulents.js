@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Succulents = require('../models/products')
-const Cart = require('../models/cart')
+
 
 /* ===========
 GET ROUTE
@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
     res.render('new.ejs')
   })
   
+
   
   /* ===========
   GET ROUTE
@@ -53,20 +54,10 @@ router.get('/', (req, res) => {
   })
 
 
-   /* ===========
-  BUY ROUTE
-  ============= */
-  //BUY
-  router.post('/buy/:id', (req, res) => {
-    console.log(req.params)
-    Cart.create(
-      req.params.id,
-      { $inc: { qty: -1 } },
-      (err, updatedSucculents) => {
-        res.render('cart.ejs')
-      }
-    )
-  })
+
+
+  // also need get route render Cart.ejs and pass cart variable
+
   
   /* ===========
   PUT ROUTE
@@ -106,7 +97,19 @@ router.get('/', (req, res) => {
     })
   })
   
+ /* ===========
+  GET ROUTE
+  ============= */
+  //BUY
 
+router.put('/:id/buy', async (req, res) => {
+  try{
+    await Succulents.findByIdAndUpdate(req.params.id, {$inc:{ qty: -1}})
+    res.redirect('/')
+  }catch(err){
+    res.send(err.message)
+  }
+})
   
   /* ===========
   SEED ROUTE

@@ -50,6 +50,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.use('/succulents', succulentsController)
 
+
 //___________________
 // Routes
 //___________________
